@@ -3,12 +3,12 @@
 
 Tento skript je určen pro sběr teplotních a vlhkostních dat z různých MQTT teploměrů a jejich následné odeslání na HTTP endpoint ŽivýObraz.eu. Skript se připojuje k MQTT brokerovi, přihlašuje se k odběru specifických topics a posílá získaná data na konfigurovaný HTTP server.
 
-Požadavky
+**Požadavky**
 
     Python3
     Knihovny: paho-mqtt, requests, json
 
-Instalace:
+**Instalace:**
 
 1. Nainstalujte potřebné Python knihovny:
 
@@ -54,7 +54,7 @@ Pro nastavení skriptu jako služby v systému s použitím systemd, proveďte n
         [Install]
         WantedBy=multi-user.target
 
-Nahraďte <username> uživatelským jménem, pod kterým chcete službu spouštět, a /cesta/k/vašemu/skriptu.py cestou k vašemu skriptu.
+**Nahraďte <username> uživatelským jménem, pod kterým chcete službu spouštět, a /cesta/k/vašemu/skriptu.py cestou k vašemu skriptu.**
 
 3. Povolte a spusťte službu:
 
