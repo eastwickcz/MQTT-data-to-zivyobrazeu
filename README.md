@@ -12,7 +12,7 @@ Instalace:
 
 1. Nainstalujte potřebné Python knihovny:
 
-    pip install -r requirements.txt
+        pip install -r requirements.txt
 
 2. Uložte tento skript do souboru a upravte konfiguraci dle vašeho prostředí.
 
@@ -38,7 +38,7 @@ Pro nastavení skriptu jako služby v systému s použitím systemd, proveďte n
 
 1. Vytvořte nový systemd service soubor. Například mqtt-thermometer.service:
 
-    sudo nano /etc/systemd/system/mqtt-thermometer.service
+        sudo nano /etc/systemd/system/mqtt-thermometer.service
 
 2. Vložte do něj následující konfiguraci, přičemž upravte cesty dle vašeho prostředí:
 
