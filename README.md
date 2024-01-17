@@ -5,18 +5,14 @@ Tento skript je určen pro sběr teplotních a vlhkostních dat z různých MQTT
 
 Požadavky
 
-    Python 3
+    Python3
     Knihovny: paho-mqtt, requests, json
 
 Instalace:
 
 1. Nainstalujte potřebné Python knihovny:
 
-        pip install -r requirements.txt
-
-nebo
-
-        pip install paho-mqtt requests
+    pip install -r requirements.txt
 
 2. Uložte tento skript do souboru a upravte konfiguraci dle vašeho prostředí.
 
@@ -42,7 +38,6 @@ Pro nastavení skriptu jako služby v systému s použitím systemd, proveďte n
 
 1. Vytvořte nový systemd service soubor. Například mqtt-thermometer.service:
 
-bash
     sudo nano /etc/systemd/system/mqtt-thermometer.service
 
 2. Vložte do něj následující konfiguraci, přičemž upravte cesty dle vašeho prostředí:
