@@ -1,5 +1,5 @@
-MQTT Teploměr - Integrace s ŽivýObraz.eu
-Popis
+# MQTT Teploměr - Integrace s ŽivýObraz.eu
+## Popis
 
 Tento skript je určen pro sběr teplotních a vlhkostních dat z různých MQTT teploměrů a jejich následné odeslání na HTTP endpoint ŽivýObraz.eu. Skript se připojuje k MQTT brokerovi, přihlašuje se k odběru specifických topics a posílá získaná data na konfigurovaný HTTP server.
 
@@ -8,15 +8,21 @@ Požadavky
     Python 3
     Knihovny: paho-mqtt, requests, json
 
-Instalace
+Instalace:
 
-    Nainstalujte potřebné Python knihovny:
+1. Nainstalujte potřebné Python knihovny:
+
+    pip install -r requirements.txt
+
+nebo
 
     pip install paho-mqtt requests
 
-    Uložte tento skript do souboru a upravte konfiguraci dle vašeho prostředí.
+2. Uložte tento skript do souboru a upravte konfiguraci dle vašeho prostředí.
 
-Konfigurace
+## Konfigurace
+
+Upravte v souboru mqtt.py následující
 
     MQTT_BROKER: IP adresa MQTT brokeru.
     MQTT_PORT: Port MQTT brokeru (standardně 1883).
@@ -26,20 +32,20 @@ Konfigurace
     HTTP_ENDPOINT: HTTP endpoint pro odeslání dat.
     IMPORT_KEY: Klíč pro autentizaci u HTTP endpointu.
 
-Použití
+## Použití
 
 Spusťte skript a nechte jej běžet. Skript bude neustále naslouchat MQTT zprávám a odesílat data na HTTP server.
-Nastavení jako systemd služba
+
+### Nastavení jako systemd služba
 
 Pro nastavení skriptu jako služby v systému s použitím systemd, proveďte následující kroky:
 
-    Vytvořte nový systemd service soubor. Například mqtt-thermometer.service:
+1. Vytvořte nový systemd service soubor. Například mqtt-thermometer.service:
 
-    bash
+bash
+    sudo nano /etc/systemd/system/mqtt-thermometer.service
 
-sudo nano /etc/systemd/system/mqtt-thermometer.service
-
-Vložte do něj následující konfiguraci, přičemž upravte cesty dle vašeho prostředí:
+2. Vložte do něj následující konfiguraci, přičemž upravte cesty dle vašeho prostředí:
 
     [Unit]
     Description=MQTT Thermometer Service
@@ -55,14 +61,12 @@ Vložte do něj následující konfiguraci, přičemž upravte cesty dle vašeho
 
 Nahraďte <username> uživatelským jménem, pod kterým chcete službu spouštět, a /cesta/k/vašemu/skriptu.py cestou k vašemu skriptu.
 
-Povolte a spusťte službu:
-
-bash
+3. Povolte a spusťte službu:
 
     sudo systemctl enable mqtt-thermometer.service
     sudo systemctl start mqtt-thermometer.service
 
-Zkontrolujte stav služby:
+4. Zkontrolujte stav služby:
 
     sudo systemctl status mqtt-thermometer.service
 
