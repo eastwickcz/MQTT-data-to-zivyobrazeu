@@ -12,11 +12,11 @@ Instalace:
 
 1. Nainstalujte potřebné Python knihovny:
 
-    pip install -r requirements.txt
+        pip install -r requirements.txt
 
 nebo
 
-    pip install paho-mqtt requests
+        pip install paho-mqtt requests
 
 2. Uložte tento skript do souboru a upravte konfiguraci dle vašeho prostředí.
 
@@ -24,13 +24,13 @@ nebo
 
 Upravte v souboru mqtt.py následující
 
-    MQTT_BROKER: IP adresa MQTT brokeru.
-    MQTT_PORT: Port MQTT brokeru (standardně 1883).
-    MQTT_USER: Uživatelské jméno pro MQTT.
-    MQTT_PASSWORD: Heslo pro MQTT.
-    MQTT_TOPICS: Seznam MQTT topics, ze kterých se mají sbírat data.
-    HTTP_ENDPOINT: HTTP endpoint pro odeslání dat.
-    IMPORT_KEY: Klíč pro autentizaci u HTTP endpointu.
+        MQTT_BROKER: IP adresa MQTT brokeru.
+        MQTT_PORT: Port MQTT brokeru (standardně 1883).
+        MQTT_USER: Uživatelské jméno pro MQTT.
+        MQTT_PASSWORD: Heslo pro MQTT.
+        MQTT_TOPICS: Seznam MQTT topics, ze kterých se mají sbírat data.
+        HTTP_ENDPOINT: HTTP endpoint pro odeslání dat.
+        IMPORT_KEY: Klíč pro autentizaci u HTTP endpointu.
 
 ## Použití
 
@@ -47,28 +47,28 @@ bash
 
 2. Vložte do něj následující konfiguraci, přičemž upravte cesty dle vašeho prostředí:
 
-    [Unit]
-    Description=MQTT Thermometer Service
-    After=network.target
+        [Unit]
+        Description=MQTT Thermometer Service
+        After=network.target
 
-    [Service]
-    Type=simple
-    User=<username>
-    ExecStart=/usr/bin/python3 /cesta/k/vašemu/skriptu.py
+        [Service]
+        Type=simple
+        User=<username>
+        ExecStart=/usr/bin/python3 /cesta/k/vašemu/skriptu.py
 
-    [Install]
-    WantedBy=multi-user.target
+        [Install]
+        WantedBy=multi-user.target
 
 Nahraďte <username> uživatelským jménem, pod kterým chcete službu spouštět, a /cesta/k/vašemu/skriptu.py cestou k vašemu skriptu.
 
 3. Povolte a spusťte službu:
 
-    sudo systemctl enable mqtt-thermometer.service
-    sudo systemctl start mqtt-thermometer.service
+        sudo systemctl enable mqtt-thermometer.service
+        sudo systemctl start mqtt-thermometer.service
 
 4. Zkontrolujte stav služby:
 
-    sudo systemctl status mqtt-thermometer.service
+        sudo systemctl status mqtt-thermometer.service
 
 Tímto způsobem se skript spustí při každém startu systému a bude běžet na pozadí.
 Poznámky
