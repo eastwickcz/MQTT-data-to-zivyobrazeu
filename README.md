@@ -6,7 +6,7 @@ Tento skript je určen pro sběr teplotních a vlhkostních dat z různých MQTT
 **Požadavky**
 
     Python3
-    Knihovny: paho-mqtt, requests, json
+    Knihovny: paho-mqtt, requests, json, time
 
 **Instalace:**
 
