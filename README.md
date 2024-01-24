@@ -1,7 +1,7 @@
 # MQTT Teploměr - Integrace s ŽivýObraz.eu
 ## Popis
 
-Tento skript je určen pro sběr teplotních a vlhkostních dat z různých MQTT teploměrů a jejich následné odeslání na HTTP endpoint ŽivýObraz.eu. Skript se připojuje k MQTT brokerovi, přihlašuje se k odběru specifických topics a posílá získaná data na konfigurovaný HTTP server.
+Tento skript je určen pro sběr teplotních a vlhkostních dat z různých MQTT teploměrů a jejich následné odeslání na HTTP endpoint ŽivýObraz.eu. Skript se připojuje k MQTT brokerovi, přihlašuje se k odběru specifických topics a posílá získaná data na konfigurovaný HTTP server každých 60 sekund.
 
 **Požadavky**
 
